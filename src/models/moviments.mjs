@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
 
 const schema = new Schema({
-  productId: {
+  productStockId: {
     type: Schema.Types.ObjectId,
     required: true,
   },
@@ -9,7 +9,10 @@ const schema = new Schema({
       type: Number,
       required: true,
   },
-  typeMoviment: "out" | "input",
+  type:{
+    type: String,
+    required: true,
+  } 
 }, { timestamps: { createdAt: true }});
 
 const movimentsModel = model('moviments', schema);
