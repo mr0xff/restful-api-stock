@@ -16,6 +16,4 @@ productLogsRoute.get('/', async(req, res)=>{
     }
 });
 
-
-
 export default productLogsRoute;

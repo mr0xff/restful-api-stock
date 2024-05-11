@@ -35,4 +35,4 @@ Execute the command:
 
 Open your browser in the `http//localhost:3000/doc`
 
-Based on [swagger-ui](https://test.com) *config...*
+Based on [swagger-ui](https://swagger.io/docs/specification/basic-structure/) *config...*
