@@ -175,5 +175,109 @@ paths:
                   message: 
                     type: string
                     example: product not exist
-              
-         
+
+  /stock:
+    get:
+      tags:
+        - Product Stock
+      responses:
+        200:
+          content:
+            application/json:
+              type: object
+    post:
+      tags:
+        - Product Stock
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: 
+              type: object
+              properties:
+                productId:
+                  type: string
+                quantity:
+                  type: number
+                  example: 1
+                lote:
+                  type: string
+                date:
+                  type: object
+      responses:
+        202:
+          content:
+            application/json:
+              type: object
+
+  /stock/{productId}:
+    get:
+      tags:
+        - Product Stock
+      parameters:
+        - name: productId 
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        202:
+          content:
+            application/json:
+              type: object
+    delete:
+      tags:
+        - Product Stock
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          application/json:
+            type: object
+  /stock/out/{stockId}:
+    post:
+      tags:
+        - Product Stock
+      parameters:
+        - name: stockId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: 
+              type: object
+              properties:
+                lote:
+                  type: string
+                quantity:
+                  type: number
+                  example: 1
+                date:
+                  type: object
+      responses:
+        202:
+          applicatio/json:
+            type: object
+  /stock/{stockId}/stock:
+    get:
+      tags:
+        - Product Stock
+      parameters:
+        - name: stockId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          application/json:
+            type: object
+

@@ -115,7 +115,7 @@ productStockRoute.get('/:stockId/stock', async(req, res)=>{
       detail: err.message
     });
   }
-})
+});
 
 productStockRoute.post('/out/:stockId', async(req, res)=>{
   try{
