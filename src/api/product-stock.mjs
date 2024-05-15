@@ -1,5 +1,6 @@
 import { Router } from "express";
 import productStockModel from "../models/product-stock.mjs";
+import productModel from '../models/product.mjs'
 import movimentsModel from "../models/moviments.mjs";
 
 const productStockRoute = Router();
@@ -20,6 +21,17 @@ productStockRoute.get('/:productId', async(req, res)=>{
   try{
     const { productId } = req.params;
     const allProductStock = await productStockModel.find({productId});
+    
+    if(!allProductStock.length){
+      const productName = await productModel.findById({_id: productId}).select({name: 1});
+      if(!productName)
+        return res.status(404).send({
+          message: 'this product not exist!'
+        });
+      return res.status(404).send({
+        message: `${productName.name} do not have stock`,
+      });
+    }
     res.send(allProductStock);
   }catch(err){
     res.status(500).send({

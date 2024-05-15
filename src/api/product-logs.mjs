@@ -16,4 +16,19 @@ productLogsRoute.get('/', async(req, res)=>{
     }
 });
 
+productLogsRoute.get('/:productStockId', async(req, res)=>{
+    try{
+        const { productStockId } = req.params;
+
+        const logsStock = await movimentsModel.find({productStockId});
+        
+        res.send(logsStock);
+    }catch(err){
+        res.status(500).send({
+            message: 'error',
+            detail: err.message
+        });
+    }
+});
+
 export default productLogsRoute;
