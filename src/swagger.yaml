@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
-  title: Web Api to Product Stock
+  title: RESFful Api to Management Product Stock
   description: Simple api to show how to manager the product stock in many places
-  version: 0.1.0
+  version: 0.1.2
 servers:
   - url: http://localhost:3000/v1
     description: base url of the api 
@@ -225,6 +225,7 @@ paths:
           content:
             application/json:
               type: object
+  /stock/{stockId}:
     delete:
       tags:
         - Product Stock

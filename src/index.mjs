@@ -8,7 +8,7 @@ import { serve, setup } from 'swagger-ui-express';
 
 config();
 
-process.env.NODE_ENV='development' && set('debug', true);
+process.env.NODE_ENV=='development' && set('debug', true);
 
 connect(`${process.env.DATABASE_URI}/${process.env.DATABASE}`)
 .then(()=>{
@@ -16,6 +16,7 @@ connect(`${process.env.DATABASE_URI}/${process.env.DATABASE}`)
 })
 .catch((err)=>{
   console.log('[-] cannot to connect to server :(');
+  console.error(`[DETAIL]`, err.message);
 });
 
 const app = express();
@@ -36,9 +37,11 @@ app.use('/v1/stock', productStockRoute);
 app.use('/v1/moviments', productLogsRoute);
 
 app.listen(process.env.PORT, ()=> {
-  console.log(`\tapi: http://localhost:${process.env.PORT}`);
-  console.log(`\tapi-docs: http://localhost:${process.env.PORT}/doc`);
-  console.log(`\tdatabase: ${process.env.DATABASE_URI}\n`);
+  console.log(`\tbase url: http://localhost:${process.env.PORT}`);
+  console.log(`\tapi documentation (swagger ui): http://localhost:${process.env.PORT}/doc -> open this link on your browser`);
+  console.log(`\taddress of mongoDb: ${process.env.DATABASE_URI}`);
+  console.log(`\tmode: ${process.env.NODE_ENV}`);
+  console.log('To change any think open the *.env* file')
 });
 
 app.use('/doc', serve, setup(swaggerDocument));

@@ -9,7 +9,7 @@ to consuming a backend api in fronted.
 - [Mongoose.js](https://mongoosejs.com/)
 
 ## How to install 
-You need to install [`MongoDB Server`](https://www.mongodb.com/try/download/community) on you manchine.
+You need to install [`MongoDB Server`](https://www.mongodb.com/try/download/community) on your manchine and start the service.
 
 Then you need to configure the [Node.js](https://nodejs.org) environment on your machine.
 
@@ -17,10 +17,13 @@ Then you need to configure the [Node.js](https://nodejs.org) environment on your
     git clone https://github.com/mr0xff/restful-api-stock.git
     cd restful-api-stock/
 ```
-#### To install dependencies on project ...
-yarn: `yarn install`
+## Install the dependencies on project
 
-npm: `npm install`
+```powershell
+    yarn install
+    # or 
+    npm run install
+```
 
 ## Staring you api ...
 
@@ -31,8 +34,10 @@ Execute the command:
     npm run start
 ```
 
-## Accessing the api documentation
+## Accessing the api documentation (SWAGGER UI)
 
-Open your browser in the `http//localhost:3000/doc`
+Open your browser in the [http//localhost:3000/doc](http//localhost:3000/doc).
 
-Based on [swagger-ui](https://swagger.io/docs/specification/basic-structure/) *config...*
+
+bye! :)
+
