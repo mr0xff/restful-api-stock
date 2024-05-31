@@ -25,7 +25,7 @@ Then you need to configure the [Node.js](https://nodejs.org) environment on your
     npm run install
 ```
 
-## Staring you api ...
+## Staring RESTful api
 
 Execute the command:
 ```bash
