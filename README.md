@@ -1,43 +1,23 @@
-# Simple RESTful API - `Product Stock Flow`
+# Getting Started with [Fastify-CLI](https://www.npmjs.com/package/fastify-cli)
+This project was bootstrapped with Fastify-CLI.
 
-This api was designed to be a simple example for restuful api 
-to consuming a backend api in fronted.
+## Available Scripts
 
-## Dependencies core dependencies of project
-- [Node.js](https://nodejs.org/en)
-- [Express.js](https://expressjs.com/)
-- [Mongoose.js](https://mongoosejs.com/)
+In the project directory, you can run:
 
-## How to install 
-You need to install [`MongoDB Server`](https://www.mongodb.com/try/download/community) on your manchine and start the service.
+### `npm run dev`
 
-Then you need to configure the [Node.js](https://nodejs.org) environment on your machine.
+To start the app in dev mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-```bash
-    git clone https://github.com/mr0xff/restful-api-stock.git
-    cd restful-api-stock/
-```
-## Install the dependencies on project
+### `npm start`
 
-```powershell
-    yarn install
-    # or 
-    npm run install
-```
+For production mode
 
-## Staring RESTful api
+### `npm run test`
 
-Execute the command:
-```bash
-    yarn start
-    # or 
-    npm run start
-```
+Run the test cases.
 
-## Accessing the api documentation (SWAGGER UI)
+## Learn More
 
-Open your browser in the [http//localhost:3000/doc](http//localhost:3000/doc).
-
-
-bye! :)
-
+To learn Fastify, check out the [Fastify documentation](https://fastify.dev/docs/latest/).
