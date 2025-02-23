@@ -1,5 +1,8 @@
 {
   "name": "restful-api-stock",
   "type": "module",
-  "packageManager": "yarn@4.6.0"
+  "packageManager": "yarn@4.6.0",
+  "scripts": {
+    "start": "node index.js"
+  }
 }
